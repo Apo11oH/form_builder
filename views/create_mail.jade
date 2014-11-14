@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1="Create Mailing List"
+    div.new_event
+        form(method = "post")
+            div
+                div
+                    span.label Title:
+                    input(type='text', name="title", id="mailing_list")
+                div#create_mail
+                    input(type='submit', value="create")

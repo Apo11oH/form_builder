@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    h1= Insert event
+    div.new_event
+        form(method = "post")
+            div
+                div
+                    span.label Title:
+                    input(type='text', name="title", id="event_title")
+                div
+                    span.label Date:
+                    input(type='text', name="date", id="event_date")
+                div
+                    span.label Time:
+                    input(type='text', name="time", id="event_time")
+                div
+                    span.label Description:
+                    input(type='text', name="date", id="event_description")
+                div#add_event
+                    input(type='submit', value="save")
+         a(href="/") != "Back to top screen"

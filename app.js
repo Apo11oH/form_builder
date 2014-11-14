@@ -22,8 +22,34 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/users', users);
+// Setup routes
+app.get("/", function(req, res) {
+    res.render('index', { 
+        title: 'Mailing List E-mail Generator'
+    });
+});
+
+app.get("/create", function(req, res) {
+    res.render('create_mail', { 
+        title: 'Create New Mail'
+    });
+});
+app.post("/create", function(req, res) {
+    res.render('create_mail', { 
+        title: 'Create New Mail'
+    });
+});
+
+app.get("/add", function(req, res) {
+    res.render('insert_event', { 
+        title: 'Add event'
+    });
+});
+app.post("/add", function(req, res) {
+    res.render('insert_event', { 
+        title: 'Add event'
+    });
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
